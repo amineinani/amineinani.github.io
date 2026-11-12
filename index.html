@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohammed-Amine Inani · Ingénieur amélioration continue et data</title>
+<meta name="description" content="Ingénieur en amélioration continue et données industrielles, passé par Airbus Atlantic. Profil, expériences, compétences et contact.">
+<meta property="og:title" content="Mohammed-Amine Inani">
+<meta property="og:description" content="Ingénieur en amélioration continue et données industrielles, passé par Airbus Atlantic. Profil, expériences, compétences et contact.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout : une planche de dessin technique. Le cartouche porte l'identité en haut de page ;
+   le reste est une colonne de lecture calme, avec le nom de chaque section en repère à gauche. */
+:root {
+  --bg: #EDF0F4;
+  --surface: #F8FAFC;
+  --ink: #0E1B2E;
+  --ink-soft: #485970;
+  --line: #BFC9D6;
+  --accent: #1746C7;
+  --on-accent: #FFFFFF;
+  --ok: #1B7F52;
+  color-scheme: light;
+
+  --font-display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B1320;
+    --surface: #121D2E;
+    --ink: #E6ECF4;
+    --ink-soft: #9BAAC0;
+    --line: #2B3B53;
+    --accent: #86A7FF;
+    --on-accent: #0B1320;
+    --ok: #4CC38A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B1320;
+  --surface: #121D2E;
+  --ink: #E6ECF4;
+  --ink-soft: #9BAAC0;
+  --line: #2B3B53;
+  --accent: #86A7FF;
+  --on-accent: #0B1320;
+  --ok: #4CC38A;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.sheet {
+  max-width: 1040px;
+  margin-inline: auto;
+  padding-block: 20px 40px;
+}
+
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* Barre du haut */
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-bottom: 14px;
+}
+.topbar .brand {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.topbar nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.topbar nav a {
+  font-size: 0.9375rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.topbar nav a:hover { color: var(--accent); text-decoration: underline; }
+
+/* Règle graduée sous la barre */
+.ruler {
+  height: 7px;
+  border-top: 1.5px solid var(--ink);
+  background: repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 12px);
+}
+
+/* En-tête */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 40px 56px;
+  align-items: end;
+  padding-block: 56px 64px;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.75rem, 9vw, 6rem);
+  line-height: 0.92;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  margin: 14px 0 0;
+  text-wrap: balance;
+}
+.hero .lead {
+  max-width: 34em;
+  margin: 24px 0 0;
+  font-size: 1.125rem;
+  color: var(--ink);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 12px 20px;
+  border: 1.5px solid var(--ink);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.btn.primary:hover { filter: brightness(1.1); color: var(--on-accent); }
+
+/* Cartouche */
+.cartouche {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin: 0;
+  background: var(--line);
+  border: 1.5px solid var(--ink);
+}
+.cartouche > div {
+  min-width: 0;
+  padding: 12px 14px 13px;
+  background: var(--surface);
+}
+.cartouche .full { grid-column: 1 / -1; }
+.cartouche dd {
+  margin: 4px 0 0;
+  font-weight: 500;
+  line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+}
+.cartouche .full dd {
+  font-family: var(--font-display);
+  font-size: 1.625rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: var(--ok);
+  vertical-align: 1px;
+}
+
+/* Sections */
+.section {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 20px 56px;
+  padding-block: 52px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 12px;
+}
+.section h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 0;
+  text-wrap: balance;
+}
+.section .body { min-width: 0; max-width: 44em; }
+.section .body > p { margin: 0 0 16px; }
+.section .body > p:last-child { margin-bottom: 0; }
+
+/* Expériences et formations */
+.entries { display: grid; gap: 40px; }
+.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 20px;
+}
+.entry h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+}
+.entry .when {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.entry .org { margin: 2px 0 0; color: var(--ink-soft); }
+.entry .desc { margin: 12px 0 0; }
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+}
+.tags li {
+  font-family: var(--font-mono);
+  font-size: 0.78125rem;
+  line-height: 1.3;
+  padding: 4px 9px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--surface);
+}
+
+/* Nomenclature des compétences */
+.bom-wrap { overflow-x: auto; }
+.bom {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+.bom th {
+  text-align: left;
+  padding: 0 16px 8px 0;
+  border-bottom: 1.5px solid var(--ink);
+}
+.bom td {
+  padding: 13px 16px 13px 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.bom td:first-child { font-weight: 600; }
+.bom td:last-child { color: var(--ink-soft); padding-right: 0; }
+.bom th:last-child { padding-right: 0; }
+
+/* Postes recherchés */
+.roles {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  border-top: 1.5px solid var(--ink);
+}
+.roles li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-weight: 500;
+}
+
+/* Contact */
+.contact-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  margin-top: 20px;
+}
+.email {
+  font-family: var(--font-mono);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+}
+.status {
+  min-height: 1.4em;
+  margin: 8px 0 0;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 24px;
+  padding-top: 18px;
+  border-top: 1.5px solid var(--ink);
+}
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: minmax(0, 1fr); padding-block: 40px 48px; }
+  .section { grid-template-columns: minmax(0, 1fr); padding-block: 40px; }
+}
+@media (max-width: 620px) {
+  .bom thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .bom tbody { display: block; border-top: 1.5px solid var(--ink); }
+  .bom tr { display: block; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .bom td { display: block; padding: 0; border: 0; }
+  .bom td:last-child { font-size: 0.875rem; margin-top: 2px; }
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header class="topbar">
+    <span class="brand">M.-A. Inani</span>
+    <nav aria-label="Sections de la page">
+      <ul>
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#experiences">Expériences</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#formations">Formations</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="ruler" aria-hidden="true"></div>
+
+  <main>
+    <section class="hero" aria-labelledby="nom">
+      <div>
+        <span class="label">Ingénieur · amélioration continue et données industrielles</span>
+        <h1 id="nom">Mohammed-Amine Inani</h1>
+        <p class="lead">Ingénieur diplômé en 2026, je travaille sur l'amélioration des processus de production à partir des données de terrain. Après un stage chez Airbus Atlantic, je cherche un poste d'ingénieur dans l'aéronautique ou l'industrie.</p>
+        <div class="actions">
+          <a class="btn primary" href="#contact">Me contacter</a>
+          <a class="btn" href="https://www.linkedin.com/in/amine-inani-672aa7336/" target="_blank" rel="noopener">Voir mon LinkedIn</a>
+        </div>
+      </div>
+
+      <dl class="cartouche" aria-label="Fiche de synthèse">
+        <div class="full">
+          <dt class="label">Désignation</dt>
+          <dd>Ingénieur amélioration continue et data</dd>
+        </div>
+        <div>
+          <dt class="label">Secteur</dt>
+          <dd>Aéronautique, industrie</dd>
+        </div>
+        <div>
+          <dt class="label">Base</dt>
+          <dd>Rochefort (17), mobile en France</dd>
+        </div>
+        <div>
+          <dt class="label">Disponibilité</dt>
+          <dd><span class="dot" aria-hidden="true"></span>Immédiate</dd>
+        </div>
+        <div>
+          <dt class="label">Contrat</dt>
+          <dd>CDI de préférence</dd>
+        </div>
+        <div>
+          <dt class="label">Permis</dt>
+          <dd>B, véhicule personnel</dd>
+        </div>
+        <div>
+          <dt class="label">Mise à jour</dt>
+          <dd>11/2026</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="section" id="profil" aria-labelledby="t-profil">
+      <h2 id="t-profil">Profil</h2>
+      <div class="body">
+        <p>Mon stage de fin d'études chez Airbus Atlantic, au département Production System Efficiency, m'a mis au contact direct de la production aéronautique. J'y ai travaillé sur les données et la continuité numérique, avec SAP, Power Query et Looker Studio, et sur l'usage de l'IA générative au service des équipes.</p>
+        <p>J'aime partir d'un problème d'atelier, le mesurer, en chercher les causes avec des méthodes éprouvées comme l'AMDEC ou le PDCA, puis mettre en place une solution que les équipes utilisent vraiment.</p>
+        <p>En parallèle de mes études, j'ai créé une activité de vente de parfums, Les Senteurs Authentiques. Elle m'a appris à mener un projet seul, de l'idée jusqu'à la vente.</p>
+      </div>
+    </section>
+
+    <section class="section" id="experiences" aria-labelledby="t-exp">
+      <h2 id="t-exp">Expériences</h2>
+      <div class="body entries">
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Stage ingénieur de fin d'études</h3>
+            <span class="when">2026</span>
+          </div>
+          <p class="org">Airbus Atlantic · département Production System Efficiency</p>
+          <p class="desc">Missions autour des données de production et de la continuité numérique : exploitation des données SAP, automatisation de traitements, tableaux de bord de suivi et usage de l'IA générative pour gagner du temps d'analyse. Analyse des problèmes avec les méthodes d'amélioration continue du site.</p>
+          <ul class="tags" aria-label="Outils et méthodes">
+            <li>SAP</li>
+            <li>Excel / Power Query</li>
+            <li>Looker Studio</li>
+            <li>Gemini (prompt engineering)</li>
+            <li>AMDEC</li>
+            <li>5M</li>
+            <li>PDCA</li>
+            <li>LBIP+</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Fondateur</h3>
+            <span class="when">Activité en cours</span>
+          </div>
+          <p class="org">Les Senteurs Authentiques · El Jadida, Maroc</p>
+          <p class="desc">Vente de parfums de niche et orientaux et de produits de beauté. Présence sur Instagram (<a href="https://www.instagram.com/senteurs_rhcm/" target="_blank" rel="noopener">@senteurs_rhcm</a>), prise de commande par WhatsApp et mise en place d'une boutique en ligne.</p>
+          <ul class="tags" aria-label="Domaines">
+            <li>Entrepreneuriat</li>
+            <li>Relation client</li>
+            <li>Vente en ligne</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="competences" aria-labelledby="t-comp">
+      <h2 id="t-comp">Compétences</h2>
+      <div class="body">
+        <div class="bom-wrap">
+          <table class="bom">
+            <thead>
+              <tr>
+                <th class="label" scope="col">Domaine</th>
+                <th class="label" scope="col">Outils et méthodes</th>
+                <th class="label" scope="col">Acquis en</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Amélioration continue</td>
+                <td>AMDEC, 5M, PDCA, LBIP+</td>
+                <td>Airbus Atlantic</td>
+              </tr>
+              <tr>
+                <td>Données de production</td>
+                <td>SAP, Excel, Power Query</td>
+                <td>Airbus Atlantic</td>
+              </tr>
+              <tr>
+                <td>Tableaux de bord</td>
+                <td>Looker Studio</td>
+                <td>Airbus Atlantic</td>
+              </tr>
+              <tr>
+                <td>IA générative</td>
+                <td>Prompt engineering sur Gemini</td>
+                <td>Airbus Atlantic</td>
+              </tr>
+              <tr>
+                <td>CAO et PLM</td>
+                <td>CATIA, 3DEXPERIENCE</td>
+                <td>Projets école</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="formations" aria-labelledby="t-form">
+      <h2 id="t-form">Formations</h2>
+      <div class="body entries">
+        <article class="entry">
+          <div class="entry-head">
+            <h3>Diplôme d'ingénieur</h3>
+            <span class="when">2026</span>
+          </div>
+          <p class="org">EIGSI · école d'ingénieurs généralistes</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="recherche" aria-labelledby="t-rech">
+      <h2 id="t-rech">Postes recherchés</h2>
+      <div class="body">
+        <p>Je cherche un poste d'ingénieur, dans l'aéronautique en priorité et dans l'industrie plus largement. Je suis mobile partout en France.</p>
+        <ul class="roles">
+          <li>Amélioration continue et lean manufacturing</li>
+          <li>Optimisation de processus et digitalisation</li>
+          <li>Gestion de configuration</li>
+          <li>Qualité</li>
+          <li>Pilotage de projet et PMO par la donnée</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="t-contact">
+      <h2 id="t-contact">Contact</h2>
+      <div class="body">
+        <p>Un poste à pourvoir ou une question sur mon parcours ? Écrivez-moi, je réponds rapidement.</p>
+        <div class="contact-line">
+          <a class="email" id="email" href="mailto:amineinani62@gmail.com">amineinani62@gmail.com</a>
+          <button class="btn" type="button" id="copy-email">Copier l'adresse</button>
+          <a class="btn primary" href="https://www.linkedin.com/in/amine-inani-672aa7336/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <p class="status" id="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="label">Mohammed-Amine Inani</span>
+    <span class="label">Rochefort · novembre 2026</span>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-email');
+  var email = document.getElementById('email');
+  var status = document.getElementById('copy-status');
+  if (!btn || !email || !status) return;
+
+  function selectEmail() {
+    var range = document.createRange();
+    range.selectNodeContents(email);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    status.textContent = "Adresse sélectionnée, vous pouvez la copier.";
+  }
+
+  btn.addEventListener('click', function () {
+    var text = email.textContent.trim();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        status.textContent = "Adresse copiée.";
+      }).catch(selectEmail);
+    } else {
+      selectEmail();
+    }
+  });
+})();
+</script>
+</body>
+</html>
